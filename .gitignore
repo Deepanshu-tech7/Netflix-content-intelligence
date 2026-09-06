@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+venv/
+ENV/
+
+# Temporary / backup files
+*.bak
+*.tmp
+*.twbr
+~*
+*fixed.twbx
+Netflix_Content_Intelligence_2026.*
+fix_*.py
+test_*.py
+build_clean_tableau.py
+sync_clean_workbook.py
+
+# Loose CSVs in root (all data lives cleanly in data/, data_clean/, tableau_data/)
+/agg_country.csv
+/agg_genre.csv
+/agg_monthly_seasonality.csv
+/agg_yearly_additions.csv
+/dim_titles.csv
+/fact_title_cast.csv
+/fact_title_country.csv
+/fact_title_director.csv
+/fact_title_genre.csv
+
+# OS files
+.DS_Store
+Thumbs.db

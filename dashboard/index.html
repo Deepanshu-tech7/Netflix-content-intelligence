@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Content Intelligence Dashboard</title>
+  <meta name="description" content="An end-to-end Netflix catalogue analytics dashboard covering 8,807 titles across 4 strategic views: Executive Overview, Global Footprint, Genre & Audience, and Content Freshness." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <div class="logo-group">
+        <div class="netflix-logo">N</div>
+        <div class="header-titles">
+          <span class="header-title">Content Intelligence</span>
+          <span class="header-sub">Catalogue Analytics &middot; 8,807 Titles &middot; 2008&ndash;2021</span>
+        </div>
+      </div>
+      <nav class="tab-nav" id="tabNav">
+        <button class="tab-btn active" data-tab="overview" id="tab-overview">&#128202; Executive Overview</button>
+        <button class="tab-btn" data-tab="global" id="tab-global">&#127758; Global Footprint</button>
+        <button class="tab-btn" data-tab="genre" id="tab-genre">&#127917; Genre &amp; Audience</button>
+        <button class="tab-btn" data-tab="freshness" id="tab-freshness">&#9889; Content Freshness</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- TAB 1: EXECUTIVE OVERVIEW -->
+    <section class="tab-panel active" id="panel-overview">
+      <div class="kpi-strip" id="kpiStrip">
+        <div class="kpi-card" style="--accent:#E50914">
+          <span class="kpi-icon">&#127916;</span>
+          <div class="kpi-body">
+            <span class="kpi-value count-up" data-target="8807">0</span>
+            <span class="kpi-label">Total Titles</span>
+          </div>
+        </div>
+        <div class="kpi-card" style="--accent:#ff6b6b">
+          <span class="kpi-icon">&#127909;</span>
+          <div class="kpi-body">
+            <span class="kpi-value count-up" data-target="6131">0</span>
+            <span class="kpi-label">Movies (69.6%)</span>
+          </div>
+        </div>
+        <div class="kpi-card" style="--accent:#4ecdc4">
+          <span class="kpi-icon">&#128250;</span>
+          <div class="kpi-body">
+            <span class="kpi-value count-up" data-target="2676">0</span>
+            <span class="kpi-label">TV Shows (30.4%)</span>
+          </div>
+        </div>
+        <div class="kpi-card" style="--accent:#ffe66d">
+          <span class="kpi-icon">&#127942;</span>
+          <div class="kpi-body">
+            <span class="kpi-value">2019</span>
+            <span class="kpi-label">Peak Year (2,016 titles)</span>
+          </div>
+        </div>
+        <div class="kpi-card" style="--accent:#a29bfe">
+          <span class="kpi-icon">&#128197;</span>
+          <div class="kpi-body">
+            <span class="kpi-value">13</span>
+            <span class="kpi-label">Years Covered</span>
+          </div>
+        </div>
+        <div class="kpi-card" style="--accent:#fd79a8">
+          <span class="kpi-icon">&#127758;</span>
+          <div class="kpi-body">
+            <span class="kpi-value">190+</span>
+            <span class="kpi-label">Countries Served</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card wide">
+          <div class="chart-card-header">
+            <h2 class="chart-title">Titles Added per Year</h2>
+            <div class="legend">
+              <span class="leg-dot" style="background:#E50914"></span>Movies
+              <span class="leg-dot" style="background:#4ecdc4"></span>TV Shows
+            </div>
+          </div>
+          <div class="chart-wrap" style="height:260px">
+            <canvas id="yearlyChart"></canvas>
+          </div>
+          <div class="insight-tag">&#128204; 2019 peak: 2,016 titles &middot; &minus;6.8% in 2020 signals end of land-grab phase</div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h2 class="chart-title">Movie vs TV Split</h2>
+          </div>
+          <div class="chart-wrap" style="height:220px">
+            <canvas id="splitDonut"></canvas>
+          </div>
+          <div class="insight-tag">&#128204; Movie-heavy catalogue &middot; TV share rising year-on-year</div>
+        </div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h2 class="chart-title">TV Share Over Time (%)</h2>
+          </div>
+          <div class="chart-wrap" style="height:220px">
+            <canvas id="tvShareLine"></canvas>
+          </div>
+          <div class="insight-tag">&#128204; TV share: 25% (2018) &rarr; 33.7% (2021) &mdash; deliberate strategic shift</div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h2 class="chart-title">Monthly Addition Volume</h2>
+          </div>
+          <div class="chart-wrap" style="height:220px">
+            <canvas id="monthlyBar"></canvas>
+          </div>
+          <div class="insight-tag">&#128204; July is peak month &middot; February is the weakest (563 titles)</div>
+        </div>
+      </div>
+
+      <div class="rec-section">
+        <h2 class="rec-heading">&#127919; Strategic Recommendations</h2>
+        <div class="rec-grid">
+          <div class="rec-card"><span class="rec-num">01</span><strong>Grow Indian Original Series</strong><p>92% of India's slate is movies &mdash; series drive subscription retention better.</p></div>
+          <div class="rec-card"><span class="rec-num">02</span><strong>Protect the Family/Kids Tier</strong><p>Only ~23% of the catalogue is Kids/Older Kids &mdash; a weak spot against Disney+.</p></div>
+          <div class="rec-card"><span class="rec-num">03</span><strong>Season 1 Renewal Gate</strong><p>67% single-season rate means acquisition spend is not converting into franchises.</p></div>
+          <div class="rec-card"><span class="rec-num">04</span><strong>Smooth Q1 Release Calendar</strong><p>February is the weakest month &mdash; target churn reduction in post-holiday window.</p></div>
+          <div class="rec-card"><span class="rec-num">05</span><strong>Keep Fresh Content Above 50%</strong><p>55% of titles added within 1 year of release &mdash; maintain as an explicit KPI.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: GLOBAL FOOTPRINT -->
+    <section class="tab-panel" id="panel-global">
+      <div class="kpi-strip">
+        <div class="kpi-card" style="--accent:#E50914"><span class="kpi-icon">&#127482;&#127480;</span><div class="kpi-body"><span class="kpi-value">3,690</span><span class="kpi-label">United States</span></div></div>
+        <div class="kpi-card" style="--accent:#ff9f43"><span class="kpi-icon">&#127470;&#127475;</span><div class="kpi-body"><span class="kpi-value">1,046</span><span class="kpi-label">India</span></div></div>
+        <div class="kpi-card" style="--accent:#54a0ff"><span class="kpi-icon">&#127468;&#127463;</span><div class="kpi-body"><span class="kpi-value">806</span><span class="kpi-label">United Kingdom</span></div></div>
+        <div class="kpi-card" style="--accent:#5f27cd"><span class="kpi-icon">&#127464;&#127462;</span><div class="kpi-body"><span class="kpi-value">445</span><span class="kpi-label">Canada</span></div></div>
+        <div class="kpi-card" style="--accent:#00d2d3"><span class="kpi-icon">&#127467;&#127479;</span><div class="kpi-body"><span class="kpi-value">393</span><span class="kpi-label">France</span></div></div>
+        <div class="kpi-card" style="--accent:#ff6b6b"><span class="kpi-icon">&#127471;&#127477;</span><div class="kpi-body"><span class="kpi-value">318</span><span class="kpi-label">Japan</span></div></div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card wide">
+          <div class="chart-card-header"><h2 class="chart-title">Top 10 Countries by Catalogue Size</h2></div>
+          <div class="chart-wrap" style="height:280px"><canvas id="countryBar"></canvas></div>
+          <div class="insight-tag">&#128204; US dominates with 3,690 titles &middot; India is clear #2 at 1,046</div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-header"><h2 class="chart-title">India vs US Content Mix</h2></div>
+          <div class="chart-wrap" style="height:240px"><canvas id="indiaUsDonut"></canvas></div>
+          <div class="insight-tag">&#128204; India: 92% movies &mdash; India served as a film market, not TV</div>
+        </div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card wide">
+          <div class="chart-card-header"><h2 class="chart-title">Market Share of Top 10 Countries</h2></div>
+          <div class="chart-wrap" style="height:240px"><canvas id="countryPie"></canvas></div>
+          <div class="insight-tag">&#128204; US + India + UK together account for ~62% of the entire catalogue</div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-header"><h2 class="chart-title">Top Directors on Platform</h2></div>
+          <div class="scrollable-list">
+            <div class="list-row" style="--pct:100%"><span class="list-name">Rajiv Chilaka</span><span class="list-bar"></span><span class="list-val">22</span></div>
+            <div class="list-row" style="--pct:95%"><span class="list-name">Jan Suter</span><span class="list-bar"></span><span class="list-val">21</span></div>
+            <div class="list-row" style="--pct:86%"><span class="list-name">Ra&uacute;l Campos</span><span class="list-bar"></span><span class="list-val">19</span></div>
+            <div class="list-row" style="--pct:73%"><span class="list-name">Marcus Raboy</span><span class="list-bar"></span><span class="list-val">16</span></div>
+            <div class="list-row" style="--pct:73%"><span class="list-name">Suhas Kadav</span><span class="list-bar"></span><span class="list-val">16</span></div>
+            <div class="list-row" style="--pct:68%"><span class="list-name">Jay Karas</span><span class="list-bar"></span><span class="list-val">15</span></div>
+            <div class="list-row" style="--pct:59%"><span class="list-name">Cathy Garcia-Molina</span><span class="list-bar"></span><span class="list-val">13</span></div>
+            <div class="list-row" style="--pct:54%"><span class="list-name">Martin Scorsese</span><span class="list-bar"></span><span class="list-val">12</span></div>
+            <div class="list-row" style="--pct:54%"><span class="list-name">Jay Chapman</span><span class="list-bar"></span><span class="list-val">12</span></div>
+            <div class="list-row" style="--pct:54%"><span class="list-name">Youssef Chahine</span><span class="list-bar"></span><span class="list-val">12</span></div>
+          </div>
+          <div class="insight-tag">&#128204; Rajiv Chilaka leads &mdash; children&apos;s content specialist</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: GENRE & AUDIENCE -->
+    <section class="tab-panel" id="panel-genre">
+      <div class="kpi-strip">
+        <div class="kpi-card" style="--accent:#E50914"><span class="kpi-icon">&#127917;</span><div class="kpi-body"><span class="kpi-value">45.5%</span><span class="kpi-label">Adults Segment</span></div></div>
+        <div class="kpi-card" style="--accent:#a29bfe"><span class="kpi-icon">&#128102;</span><div class="kpi-body"><span class="kpi-value">~23%</span><span class="kpi-label">Kids + Older Kids</span></div></div>
+        <div class="kpi-card" style="--accent:#fdcb6e"><span class="kpi-icon">&#127758;</span><div class="kpi-body"><span class="kpi-value">2,752</span><span class="kpi-label">Intl Movies (top genre)</span></div></div>
+        <div class="kpi-card" style="--accent:#00b894"><span class="kpi-icon">&#127916;</span><div class="kpi-body"><span class="kpi-value">99.6 min</span><span class="kpi-label">Avg Movie Runtime</span></div></div>
+        <div class="kpi-card" style="--accent:#e17055"><span class="kpi-icon">&#128250;</span><div class="kpi-body"><span class="kpi-value">67%</span><span class="kpi-label">Single-Season Shows</span></div></div>
+        <div class="kpi-card" style="--accent:#0984e3"><span class="kpi-icon">&#11088;</span><div class="kpi-body"><span class="kpi-value">1.76</span><span class="kpi-label">Avg Seasons per Show</span></div></div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card">
+          <div class="chart-card-header"><h2 class="chart-title">Top 10 Genres</h2></div>
+          <div class="chart-wrap" style="height:280px"><canvas id="genreBar"></canvas></div>
+          <div class="insight-tag">&#128204; International Movies dominate &mdash; global content strategy paying off</div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-header"><h2 class="chart-title">Audience Segment Distribution</h2></div>
+          <div class="chart-wrap" style="height:280px"><canvas id="audienceDonut"></canvas></div>
+          <div class="insight-tag">&#128204; Adults: 45.5% &middot; Teens: 30.1% &middot; Kids severely under-served</div>
+        </div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card">
+          <div class="chart-card-header"><h2 class="chart-title">Content Rating Distribution</h2></div>
+          <div class="chart-wrap" style="height:260px"><canvas id="ratingBar"></canvas></div>
+          <div class="insight-tag">&#128204; TV-MA (3,207) dominates &mdash; heavy adult content bias across the catalogue</div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-header"><h2 class="chart-title">Top 10 Actors on Netflix</h2></div>
+          <div class="scrollable-list">
+            <div class="list-row" style="--pct:100%"><span class="list-name">Anupam Kher &#127470;&#127475;</span><span class="list-bar"></span><span class="list-val">43</span></div>
+            <div class="list-row" style="--pct:81%"><span class="list-name">Shah Rukh Khan &#127470;&#127475;</span><span class="list-bar"></span><span class="list-val">35</span></div>
+            <div class="list-row" style="--pct:77%"><span class="list-name">Julie Tejwani &#127470;&#127475;</span><span class="list-bar"></span><span class="list-val">33</span></div>
+            <div class="list-row" style="--pct:74%"><span class="list-name">Takahiro Sakurai &#127471;&#127477;</span><span class="list-bar"></span><span class="list-val">32</span></div>
+            <div class="list-row" style="--pct:74%"><span class="list-name">Naseeruddin Shah &#127470;&#127475;</span><span class="list-bar"></span><span class="list-val">32</span></div>
+            <div class="list-row" style="--pct:72%"><span class="list-name">Rupa Bhimani &#127470;&#127475;</span><span class="list-bar"></span><span class="list-val">31</span></div>
+            <div class="list-row" style="--pct:70%"><span class="list-name">Akshay Kumar &#127470;&#127475;</span><span class="list-bar"></span><span class="list-val">30</span></div>
+            <div class="list-row" style="--pct:70%"><span class="list-name">Om Puri &#127470;&#127475;</span><span class="list-bar"></span><span class="list-val">30</span></div>
+            <div class="list-row" style="--pct:67%"><span class="list-name">Yuki Kaji &#127471;&#127477;</span><span class="list-bar"></span><span class="list-val">29</span></div>
+            <div class="list-row" style="--pct:65%"><span class="list-name">Paresh Rawal &#127470;&#127475;</span><span class="list-bar"></span><span class="list-val">28</span></div>
+          </div>
+          <div class="insight-tag">&#128204; 8 of top 10 are Indian actors &mdash; reflects India&apos;s catalogue dominance</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: CONTENT FRESHNESS -->
+    <section class="tab-panel" id="panel-freshness">
+      <div class="kpi-strip">
+        <div class="kpi-card" style="--accent:#00b894"><span class="kpi-icon">&#9889;</span><div class="kpi-body"><span class="kpi-value">55%</span><span class="kpi-label">Fresh Content (&le;1yr old)</span></div></div>
+        <div class="kpi-card" style="--accent:#fdcb6e"><span class="kpi-icon">&#128197;</span><div class="kpi-body"><span class="kpi-value">1 Year</span><span class="kpi-label">Median Gap at Add</span></div></div>
+        <div class="kpi-card" style="--accent:#E50914"><span class="kpi-icon">&#127942;</span><div class="kpi-body"><span class="kpi-value">July</span><span class="kpi-label">Peak Addition Month</span></div></div>
+        <div class="kpi-card" style="--accent:#636e72"><span class="kpi-icon">&#128197;</span><div class="kpi-body"><span class="kpi-value">Feb</span><span class="kpi-label">Lowest Addition Month</span></div></div>
+        <div class="kpi-card" style="--accent:#a29bfe"><span class="kpi-icon">&#127902;</span><div class="kpi-body"><span class="kpi-value">1925</span><span class="kpi-label">Oldest Title (Release)</span></div></div>
+        <div class="kpi-card" style="--accent:#74b9ff"><span class="kpi-icon">&#128226;</span><div class="kpi-body"><span class="kpi-value">2021</span><span class="kpi-label">Most Recent Release</span></div></div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card wide">
+          <div class="chart-card-header">
+            <h2 class="chart-title">Monthly Content Addition Pattern</h2>
+          </div>
+          <div class="chart-wrap" style="height:260px"><canvas id="monthlyFreshChart"></canvas></div>
+          <div class="insight-tag">&#128204; Seasonal pattern clear &mdash; summer (July) and year-end (Dec) spikes; Q1 trough</div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-header"><h2 class="chart-title">Fresh vs Back-Catalogue</h2></div>
+          <div class="chart-wrap" style="height:230px"><canvas id="freshnessDonut"></canvas></div>
+          <div class="insight-tag">&#128204; 55% fresh &mdash; industry-leading vs library-heavy rivals</div>
+        </div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card wide">
+          <div class="chart-card-header"><h2 class="chart-title">Yearly Acquisition: Movies vs TV Shows</h2></div>
+          <div class="chart-wrap" style="height:240px"><canvas id="freshYearlyStack"></canvas></div>
+          <div class="insight-tag">&#128204; Acquisition peaked 2019, selective buying from 2020 &mdash; quality over quantity strategy</div>
+        </div>
+        <div class="chart-card">
+          <h2 class="chart-title" style="margin-bottom:16px">Freshness Deep-Dive</h2>
+          <div class="insight-deep">
+            <div class="insight-deep-row">
+              <div class="insight-deep-icon" style="background:rgba(0,184,148,0.15);color:#00b894">&#9889;</div>
+              <div><div class="insight-deep-title">Fresh Content KPI</div><div class="insight-deep-desc">55% of all titles were added within 1 year of release. Target: keep this above 50% as a competitive differentiator.</div></div>
+            </div>
+            <div class="insight-deep-row">
+              <div class="insight-deep-icon" style="background:rgba(253,203,110,0.15);color:#fdcb6e">&#128197;</div>
+              <div><div class="insight-deep-title">Median Lag = 1 Year</div><div class="insight-deep-desc">Median gap between a title's release year and when Netflix added it is just 1 year &mdash; fast acquisition pipeline.</div></div>
+            </div>
+            <div class="insight-deep-row">
+              <div class="insight-deep-icon" style="background:rgba(229,9,20,0.15);color:#E50914">&#128201;</div>
+              <div><div class="insight-deep-title">Feb Is the Danger Zone</div><div class="insight-deep-desc">Only 563 titles added in February. The post-holiday churn window is under-served. Smooth Q1 to reduce cancellations.</div></div>
+            </div>
+            <div class="insight-deep-row">
+              <div class="insight-deep-icon" style="background:rgba(108,92,231,0.15);color:#a29bfe">&#127902;</div>
+              <div><div class="insight-deep-title">Back-Catalogue Strategy</div><div class="insight-deep-desc">45% of titles are older than 1 year at time of addition &mdash; strategic acquisitions for binge value.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>Netflix Content Intelligence</strong> &middot; Built by <strong>Deepanshu Garkoti</strong> &middot; SQL &middot; Python &middot; Data Analytics</div>
+      <div class="footer-links">
+        <span>&#128231; garkotideepanshu173@gmail.com</span>
+        <span>&#128279; linkedin.com/in/deepanshugarkoti</span>
+        <span>&#128187; github.com/Deepanshu-tech7</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

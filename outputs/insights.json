@@ -1,0 +1,321 @@
+{
+  "quality_log": {
+    "raw_shape": [
+      8807,
+      12
+    ],
+    "raw_nulls": {
+      "show_id": 0,
+      "type": 0,
+      "title": 0,
+      "director": 2634,
+      "cast": 825,
+      "country": 831,
+      "date_added": 10,
+      "release_year": 0,
+      "rating": 4,
+      "duration": 3,
+      "listed_in": 0,
+      "description": 0
+    },
+    "raw_duplicates": 0,
+    "duplicate_titles": 0,
+    "rating_holding_duration": 3,
+    "date_added_unparsed": 10,
+    "clean_shape": [
+      8807,
+      27
+    ]
+  },
+  "insights": {
+    "total_titles": 8807,
+    "movies": 6131,
+    "tv_shows": 2676,
+    "movie_pct": 69.6,
+    "tv_pct": 30.4,
+    "date_min": "2008-01-01",
+    "date_max": "2021-09-25",
+    "release_year_min": 1925,
+    "release_year_max": 2021,
+    "peak_year": 2019,
+    "peak_year_titles": 2016,
+    "y2019": 2016,
+    "y2020": 1879,
+    "y2021": 1498,
+    "yoy_2019_2020_pct": -6.8,
+    "top_countries": [
+      {
+        "country_name": "United States",
+        "titles": 3690
+      },
+      {
+        "country_name": "India",
+        "titles": 1046
+      },
+      {
+        "country_name": "United Kingdom",
+        "titles": 806
+      },
+      {
+        "country_name": "Canada",
+        "titles": 445
+      },
+      {
+        "country_name": "France",
+        "titles": 393
+      },
+      {
+        "country_name": "Japan",
+        "titles": 318
+      },
+      {
+        "country_name": "Spain",
+        "titles": 232
+      },
+      {
+        "country_name": "South Korea",
+        "titles": 231
+      },
+      {
+        "country_name": "Germany",
+        "titles": 226
+      },
+      {
+        "country_name": "Mexico",
+        "titles": 169
+      }
+    ],
+    "top_genres": {
+      "International Movies": 2752,
+      "Dramas": 2427,
+      "Comedies": 1674,
+      "International TV Shows": 1351,
+      "Documentaries": 869,
+      "Action & Adventure": 859,
+      "TV Dramas": 763,
+      "Independent Movies": 756,
+      "Children & Family Movies": 641,
+      "Romantic Movies": 616
+    },
+    "top_directors": {
+      "Rajiv Chilaka": 22,
+      "Jan Suter": 21,
+      "Ra\u00fal Campos": 19,
+      "Marcus Raboy": 16,
+      "Suhas Kadav": 16,
+      "Jay Karas": 15,
+      "Cathy Garcia-Molina": 13,
+      "Martin Scorsese": 12,
+      "Jay Chapman": 12,
+      "Youssef Chahine": 12
+    },
+    "top_actors": {
+      "Anupam Kher": 43,
+      "Shah Rukh Khan": 35,
+      "Julie Tejwani": 33,
+      "Takahiro Sakurai": 32,
+      "Naseeruddin Shah": 32,
+      "Rupa Bhimani": 31,
+      "Akshay Kumar": 30,
+      "Om Puri": 30,
+      "Yuki Kaji": 29,
+      "Paresh Rawal": 28
+    },
+    "avg_movie_minutes": 99.6,
+    "median_movie_minutes": 98.0,
+    "avg_seasons": 1.76,
+    "one_season_pct": 67.0,
+    "rating_distribution": {
+      "TV-MA": 3207,
+      "TV-14": 2160,
+      "TV-PG": 863,
+      "R": 799,
+      "PG-13": 490,
+      "TV-Y7": 334,
+      "TV-Y": 307,
+      "PG": 287,
+      "TV-G": 220,
+      "NR": 80
+    },
+    "audience_segment": {
+      "Adults": 4009,
+      "Teens": 2650,
+      "Older Kids": 1150,
+      "Kids": 908,
+      "Unrated": 90
+    },
+    "adults_pct": 45.5,
+    "median_content_age_at_add": 1.0,
+    "fresh_content_pct": 55.0,
+    "peak_month": "Jul",
+    "low_month": "Feb",
+    "india_titles": 1046,
+    "india_movie_pct": 92.0,
+    "us_titles": 3690,
+    "us_tv_pct": 25.4,
+    "tv_share_by_year": {
+      "2008": 50.0,
+      "2009": 0.0,
+      "2010": 0.0,
+      "2011": 0.0,
+      "2012": 0.0,
+      "2013": 45.5,
+      "2014": 20.8,
+      "2015": 31.7,
+      "2016": 41.0,
+      "2017": 29.4,
+      "2018": 25.0,
+      "2019": 29.4,
+      "2020": 31.7,
+      "2021": 33.7
+    },
+    "yearly_table": [
+      {
+        "year_added": 2008,
+        "Movie": 1,
+        "TV Show": 1,
+        "Total": 2
+      },
+      {
+        "year_added": 2009,
+        "Movie": 2,
+        "TV Show": 0,
+        "Total": 2
+      },
+      {
+        "year_added": 2010,
+        "Movie": 1,
+        "TV Show": 0,
+        "Total": 1
+      },
+      {
+        "year_added": 2011,
+        "Movie": 13,
+        "TV Show": 0,
+        "Total": 13
+      },
+      {
+        "year_added": 2012,
+        "Movie": 3,
+        "TV Show": 0,
+        "Total": 3
+      },
+      {
+        "year_added": 2013,
+        "Movie": 6,
+        "TV Show": 5,
+        "Total": 11
+      },
+      {
+        "year_added": 2014,
+        "Movie": 19,
+        "TV Show": 5,
+        "Total": 24
+      },
+      {
+        "year_added": 2015,
+        "Movie": 56,
+        "TV Show": 26,
+        "Total": 82
+      },
+      {
+        "year_added": 2016,
+        "Movie": 253,
+        "TV Show": 176,
+        "Total": 429
+      },
+      {
+        "year_added": 2017,
+        "Movie": 839,
+        "TV Show": 349,
+        "Total": 1188
+      },
+      {
+        "year_added": 2018,
+        "Movie": 1237,
+        "TV Show": 412,
+        "Total": 1649
+      },
+      {
+        "year_added": 2019,
+        "Movie": 1424,
+        "TV Show": 592,
+        "Total": 2016
+      },
+      {
+        "year_added": 2020,
+        "Movie": 1284,
+        "TV Show": 595,
+        "Total": 1879
+      },
+      {
+        "year_added": 2021,
+        "Movie": 993,
+        "TV Show": 505,
+        "Total": 1498
+      }
+    ],
+    "monthly_table": [
+      {
+        "month_added": 1.0,
+        "month_name_added": "Jan",
+        "titles_added": 738
+      },
+      {
+        "month_added": 2.0,
+        "month_name_added": "Feb",
+        "titles_added": 563
+      },
+      {
+        "month_added": 3.0,
+        "month_name_added": "Mar",
+        "titles_added": 742
+      },
+      {
+        "month_added": 4.0,
+        "month_name_added": "Apr",
+        "titles_added": 764
+      },
+      {
+        "month_added": 5.0,
+        "month_name_added": "May",
+        "titles_added": 632
+      },
+      {
+        "month_added": 6.0,
+        "month_name_added": "Jun",
+        "titles_added": 728
+      },
+      {
+        "month_added": 7.0,
+        "month_name_added": "Jul",
+        "titles_added": 827
+      },
+      {
+        "month_added": 8.0,
+        "month_name_added": "Aug",
+        "titles_added": 755
+      },
+      {
+        "month_added": 9.0,
+        "month_name_added": "Sep",
+        "titles_added": 770
+      },
+      {
+        "month_added": 10.0,
+        "month_name_added": "Oct",
+        "titles_added": 760
+      },
+      {
+        "month_added": 11.0,
+        "month_name_added": "Nov",
+        "titles_added": 705
+      },
+      {
+        "month_added": 12.0,
+        "month_name_added": "Dec",
+        "titles_added": 813
+      }
+    ]
+  }
+}
