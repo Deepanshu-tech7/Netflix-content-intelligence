@@ -100,10 +100,35 @@ netflix-analytics/
 | 4 | Smooth the **Q1 release calendar** (Feb is the weakest month) to reduce churn in the post-holiday window | Insight 8 |
 | 5 | Hold the **fresh-content ratio above 50%** as an explicit KPI; freshness is the visible differentiator vs library-heavy rivals | Insight 5 |
 
-## 8. Dashboard
+## 8. Tableau Dashboards Showcase
 
-Tableau workbook: 4 dashboards — *Executive Overview*, *Global Footprint*, *Genre & Audience*,
-*Content Freshness*. Build spec, calculated fields and layout in `docs/tableau_specs.md`.
+The analytics suite comprises **4 strategic Tableau dashboards** designed for content strategy and acquisition leadership:
+
+### 📊 Dashboard 1: Executive Overview
+> **Core Focus:** Overall portfolio volume (8,807 titles), Movie vs TV split (69.6% vs 30.4%), acquisition cadence peaking in 2019 (2,016 additions), and monthly seasonality (July peak vs February lull).
+
+![Executive Overview Dashboard](docs/screenshots/dashboard_1_executive_overview.png)
+
+---
+
+### 🌍 Dashboard 2: Global Footprint & Slate Analysis
+> **Core Focus:** Geographic coverage across 120+ production markets, Top 10 production hubs (US leads with 3,690 titles; India #2 with 1,046 titles), and the India slate disparity (92% movies vs 8% series).
+
+![Global Footprint Dashboard](docs/screenshots/dashboard_2_global_footprint.png)
+
+---
+
+### 🎭 Dashboard 3: Genre Architecture & Audience
+> **Core Focus:** Primary genre distribution (International Movies, Dramas, Comedies lead), adult rating skew (45.5% TV-MA/R vs ~23% Kids/Family), top talent frequency, and movie runtime distribution (median 98 min).
+
+![Genre and Audience Dashboard](docs/screenshots/dashboard_3_genre_and_audience.png)
+
+---
+
+### ⚡ Dashboard 4: Freshness & Series Health
+> **Core Focus:** Content freshness at licensing (55% added within 1 year of release), TV series cancellation bottleneck (67% single-season shows), and the strategic pivot toward series for subscriber retention (25.0% TV share in 2018 → 33.7% in 2021).
+
+![Content Freshness and Series Health Dashboard](docs/screenshots/dashboard_4_content_freshness.png)
 
 ## 9. How to Reproduce
 
