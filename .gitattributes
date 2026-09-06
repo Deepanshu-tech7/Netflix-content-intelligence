@@ -1,0 +1,15 @@
+# Exclude web dashboard assets and XML workbooks from repo language breakdown
+dashboard/** linguist-vendored
+dashboard/* linguist-vendored
+*.html linguist-detectable=false
+*.css linguist-detectable=false
+*.js linguist-detectable=false
+*.twb linguist-detectable=false
+*.twbx linguist-detectable=false
+*.xml linguist-detectable=false
+
+# Ensure SQL and Python are prioritized
+sql/*.sql linguist-language=SQL
+sql/*.sql linguist-detectable=true
+*.py linguist-language=Python
+*.py linguist-detectable=true
